@@ -6,6 +6,10 @@ public static class StringExtensions
     {
         return input.Split(seperator, StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
     }
+    public static char[] SplitAndTrim(this string input)
+    {
+        return input.ToCharArray();
+    }
 
     public static Dictionary<char, int> FrequencyMap(this string input)
     {
