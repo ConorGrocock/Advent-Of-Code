@@ -1,4 +1,6 @@
-﻿namespace SharedUtils;
+﻿using System.Text;
+
+namespace SharedUtils;
 
 public static class StringExtensions
 {
@@ -28,5 +30,18 @@ public static class StringExtensions
         }
 
         return dictionary;
+    }
+    
+    public static string ReplaceAt(this string input, int index, char newChar)
+    {
+        var builder = new StringBuilder(input);
+        builder[index] = newChar;
+        return builder.ToString();
+    }
+    
+    // Create repeat string extension method
+    public static string Repeat(this string input, int count, string? separator = null)
+    {
+        return string.Join(separator ?? string.Empty, Enumerable.Repeat(input, count).ToList());
     }
 }

@@ -47,6 +47,16 @@ public class Point
 
         return true;
     }
+    
+    public double DistanceToPythagoras(Point to)
+    {
+        return Math.Sqrt(Math.Pow(X - to.X, 2) + Math.Pow(Y - to.Y, 2));
+    }
+    
+    public int DistanceToManhattan(Point to)
+    {
+        return Math.Abs(to.X - X) + Math.Abs(to.Y - Y);
+    }
 
     public override string ToString()
     {
